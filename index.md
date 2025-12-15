@@ -24,12 +24,27 @@ This analysis attempts to answer two questions regarding the evolution of crime 
 With the first question, we aim to observe if crime remains concentrated in specific neighborhoods or if it fluctuates due to other confounding variables. With the second question, we aim to identify trends in the most frequently reported crimes and observe how their prevalence has changed over the two decades.
 
 
-### Data Sources/Ideas
-* [Allrecipes](https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-09-16): Find top ingredients by avrage star rating and then possibly make something combinding the top 5?
-* [Henley Passport Index Data](https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-09-09): Compaire strenghts of passports baised on year and compair with global events to see how that impacted raitings
-* [Pixar Films](https://github.com/rfordatascience/tidytuesday/tree/main/data/2025/2025-03-11): See if there actually has been a fall off of pixar films in the recent years using 5 ratings and release dates
-* [The CIA World Factbook](https://github.com/rfordatascience/tidytuesday/blob/main/data/2024/2024-10-22/readme.md): Observe the relationship between many variables of a country
-* [Relative Age of Congress](https://github.com/fivethirtyeight/data/tree/master/congress-demographics): Compaire how the avrage age of congress compairs to the avrage age of consituants over time.
+### Analysis Approach
+Our approach involves a combination of time-series aggregation and geospatial visualization, for our first research question we used the geospatial visualizations and for the second we focused on time series aggregation and analysis. 
+
+
+### Question 1
+
+[Link to Google Colab](https://colab.research.google.com/drive/1lOpVAjmulkl0FqykBsH9izfVos_eGKYB#scrollTo=IAPpOe-wae91)
+
+For this first question we used a scatter mapbox in conjunction with binning To create the visualization.
+
+{% include chicago_crime_hotspots.html %}
+
+### Data Preparation Steps:
+* Drop rows without coordinates.
+* Converting each crime’s location into an H3 hexagon.
+* Group incidents by year and by H3 cell.
+
+
+We initially attempted a standard heatmap using all ~8 million inputs, However we repeatedly ran into memory issues with colab and due to the size of the data every time we had to restart it added about 3 minutes just for it to iterate over the data. Switching to H3 binning enabled us to go through section by section and find like points instead of plotting each of the 8 million points. 
+
+
 
 
 
