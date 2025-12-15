@@ -19,6 +19,8 @@ The dataset analyzed in this project is the “Chicago Crime Incidents 2001 to P
 This analysis attempts to answer two questions regarding the evolution of crime in Chicago:
 * How have the geographic locations (“Hotspots”) of crimes changed from year to year?
 * Has there been a significant change in the overall volume and specific types of crimes (“Trends”) committed over the years?
+
+
 With the first question, we aim to observe if crime remains concentrated in specific neighborhoods or if it fluctuates due to other confounding variables. With the second question, we aim to identify trends in the most frequently reported crimes and observe how their prevalence has changed over the two decades.
 
 
